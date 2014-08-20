@@ -36,6 +36,7 @@ EndIf (Boost_FOUND)
 set(LINK_DIRECTORIES
 ${ROOT_LIBRARY_DIR}
 ${Boost_LIBRARY_DIRS}
+${FAIRROOT_LIBRARY_DIR}
 ) 
 
 link_directories(${LINK_DIRECTORIES})
@@ -66,7 +67,8 @@ Set(LIBRARY_NAME EsrSidsMQ)
 
 If (Boost_FOUND)
   Set(DEPENDENCIES
-    Base  FairMQ FairMQSampler boost_thread boost_system boost_serialization boost_filesystem)
+    Base ParBase FairTools MCStack FairMQ FairMQSampler boost_thread 
+boost_system boost_serialization boost_filesystem RIO Cint Core Gui)
 EndIf (Boost_FOUND)
 
 GENERATE_LIBRARY()

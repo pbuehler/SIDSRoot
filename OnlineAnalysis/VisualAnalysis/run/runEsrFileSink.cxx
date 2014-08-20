@@ -12,9 +12,9 @@
 #include "EsrFileSink.h"
 
 #ifdef NANOMSG
-#include "nanomsg/FairMQTransportFactoryNN.h"
+#include "FairMQTransportFactoryNN.h"
 #else
-#include "zeromq/FairMQTransportFactoryZMQ.h"
+#include "FairMQTransportFactoryZMQ.h"
 #endif
 
 #include <boost/archive/text_iarchive.hpp>
