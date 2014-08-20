@@ -165,6 +165,7 @@ add_subdirectory (OscGenerators)
 add_subdirectory (esr)
 add_subdirectory (passive)
 add_subdirectory (field)  
+add_subdirectory (OnlineAnalysis)
 
 WRITE_CONFIG_FILE(config.sh)
  

@@ -13,24 +13,24 @@ set(INCLUDE_DIRECTORIES
 ${BASE_INCLUDE_DIRECTORIES}
 ${ROOT_INCLUDE_DIR}
 ${ZMQ_INCLUDE_DIR}
-${CMAKE_SOURCE_DIR}/fairmq
-${CMAKE_SOURCE_DIR}/base/MQ
-${CMAKE_SOURCE_DIR}/example/EsrSidsMQ
-${CMAKE_SOURCE_DIR}/example/EsrSidsMQ/data
-${CMAKE_SOURCE_DIR}/example/EsrSidsMQ/MQTask
-${CMAKE_SOURCE_DIR}/example/EsrSidsMQ/SubTask
-${CMAKE_SOURCE_DIR}/example/EsrSidsMQ/MQDevice
-${CMAKE_SOURCE_DIR}/example/EsrSidsMQ/GUI
+${BASE_INCLUDE_DIRECTORIES}/fairmq
+${BASE_INCLUDE_DIRECTORIES}/base/MQ
+${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis
+${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/data
+${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/MQTask
+${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/SubTask
+${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/MQDevice
+${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/GUI
 )
 
 include_directories(${INCLUDE_DIRECTORIES})
 
 
 If (Boost_FOUND)
-  configure_file( ${CMAKE_SOURCE_DIR}/example/EsrSidsMQ/macro/startEsrSampler.sh.in ${CMAKE_BINARY_DIR}/bin/startEsrSampler.sh )
-  configure_file( ${CMAKE_SOURCE_DIR}/example/EsrSidsMQ/macro/startEsrSink.sh.in ${CMAKE_BINARY_DIR}/bin/startEsrSink.sh )
-  configure_file( ${CMAKE_SOURCE_DIR}/example/EsrSidsMQ/macro/startPushPull_esr.sh.in ${CMAKE_BINARY_DIR}/bin/startEsrPushPull.sh )
-  configure_file( ${CMAKE_SOURCE_DIR}/example/EsrSidsMQ/macro/startVisualAnalysis.sh.in ${CMAKE_BINARY_DIR}/bin/startVisualAnalysis.sh )
+  configure_file( ${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/macro/startEsrSampler.sh.in ${CMAKE_BINARY_DIR}/bin/startEsrSampler.sh )
+  configure_file( ${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/macro/startEsrSink.sh.in ${CMAKE_BINARY_DIR}/bin/startEsrSink.sh )
+  configure_file( ${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/macro/startPushPull_esr.sh.in ${CMAKE_BINARY_DIR}/bin/startEsrPushPull.sh )
+  configure_file( ${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/macro/startVisualAnalysis.sh.in ${CMAKE_BINARY_DIR}/bin/startVisualAnalysis.sh )
 EndIf (Boost_FOUND)
 
 set(LINK_DIRECTORIES
