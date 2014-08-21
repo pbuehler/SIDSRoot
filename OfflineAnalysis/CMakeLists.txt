@@ -1,0 +1,5 @@
+if(BAT_FOUND AND CUBA_FOUND)
+add_subdirectory (OscBayesianAnalysis)
+else(BAT_FOUND AND CUBA_FOUND)
+Message(STATUS "OscBayesianAnalysis will not be build. BAT and CUBA libraries were not found")
+endif(BAT_FOUND AND CUBA_FOUND)

@@ -13,7 +13,7 @@
 message(STATUS "Looking for BAT...")
 # Dependencies
 #libfind_package(BAT cuba)
-find_package(ROOT 5.16.00 REQUIRED)
+find_package(ROOT 5.34.00 REQUIRED)
 find_package(cuba)
 
 if(CUBA_FOUND)

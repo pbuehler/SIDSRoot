@@ -102,6 +102,11 @@ find_package(CLHEP)
 find_package(CERNLIB)
 find_package(HEPMC)
 
+#for Bayesian analysis
+find_package(cuba)
+find_package(BAT COMPONENTS models mtf mvc)
+
+
 Set(Boost_NO_SYSTEM_PATHS TRUE)
 Set(Boost_NO_BOOST_CMAKE TRUE)
 If(${ROOT_LIBRARY_DIR} MATCHES /lib/root)
@@ -125,6 +130,9 @@ If (Boost_FOUND)
 Else (Boost_FOUND)
   Set(Boost_Avail 0)
 EndIf (Boost_FOUND)
+
+
+
 
 # set a variable which should be used in all CMakeLists.txt
 # Defines all basic include directories from fairbase
