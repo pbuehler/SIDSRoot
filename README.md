@@ -83,5 +83,7 @@ Single Ion Decay Spectroscopy package for the online/offline data analysis of th
   # for CLANG on mac OS X use the flag -std=c++11 -stdlib=libc++
   make
   # or e.g. make -jn for n cores
+  . config.sh    
+  # or source config.csh
   ```
   
