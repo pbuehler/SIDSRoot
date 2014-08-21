@@ -29,6 +29,9 @@ SET(FAIRROOTPATH $ENV{FAIRROOTPATH})
 
 # where to look first for cmake modules, before ${CMAKE_ROOT}/Modules/ 
 # is checked
+
+
+
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
 set(CMAKE_MODULE_PATH "${FAIRROOTPATH}/share/fairbase/cmake/modules"  ${CMAKE_MODULE_PATH})
 
@@ -56,7 +59,7 @@ set(EXECUTABLE_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
 set(INCLUDE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/include")
 Set(VMCWORKDIR ${CMAKE_SOURCE_DIR})
 Option(USE_PATH_INFO "Information from PATH and LD_LIBRARY_PATH are
-used."OFF)
+used." OFF)
 If(USE_PATH_INFO)
   Set(PATH "$PATH")
   If (APPLE)
