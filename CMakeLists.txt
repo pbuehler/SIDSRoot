@@ -159,8 +159,6 @@ SET(LD_LIBRARY_PATH  ${_LIBDIR} ${LD_LIBRARY_PATH})
 
 
 # Check if the compiler support specific C++11 features
-# Up to now this is only a check since the code does not use
-# any of the features of the new standard
 include(CheckCXX11Features)
 
 IF(HAS_CXX11_SHAREDPOINTER)
@@ -177,9 +175,23 @@ add_subdirectory (esr)
 add_subdirectory (passive)
 add_subdirectory (field)  
 add_subdirectory (OnlineAnalysis)
+add_subdirectory (OfflineAnalysis)
 
-set(OUTPUT_DATA_DIR "${SIDS_BINARY_DIR}/AnalysisOutput/VisualAnalysis")
+set(OUTPUT_DATA_DIR "${SIDS_SOURCE_DIR}/AnalysisOutput/Osc/Online/VisualAnalysis")
 file(MAKE_DIRECTORY ${OUTPUT_DATA_DIR})
+
+set(OUTPUT_DATA_DIR "${SIDS_SOURCE_DIR}/AnalysisOutput/Osc/Offline/VisualAnalysis")
+file(MAKE_DIRECTORY ${OUTPUT_DATA_DIR})
+
+set(OUTPUT_DATA_DIR "${SIDS_SOURCE_DIR}/AnalysisOutput/Osc/Offline/BayesianAnalysis")
+file(MAKE_DIRECTORY ${OUTPUT_DATA_DIR})
+
+set(OUTPUT_DATA_DIR "${SIDS_SOURCE_DIR}/AnalysisOutput/Osc/Offline/LikelihoodAnalysis")
+file(MAKE_DIRECTORY ${OUTPUT_DATA_DIR})
+
+set(OUTPUT_DATA_DIR "${SIDS_SOURCE_DIR}/AnalysisOutput/Osc/Offline/Simulation")
+file(MAKE_DIRECTORY ${OUTPUT_DATA_DIR})
+
 
 WRITE_CONFIG_FILE(config.sh)
  
