@@ -37,7 +37,7 @@ Single Ion Decay Spectroscopy package for the online/offline data analysis of th
     cd FairRoot
     mkdir build
     cd build
-    cmake DCMAKE_CXX_FLAGS="c++11FLAG" -DCMAKE_INSTALL_PREFIX="~/fair_install/FairRootInst" ..
+    cmake -DCMAKE_CXX_FLAGS="c++11FLAG" -DCMAKE_INSTALL_PREFIX="~/fair_install/FairRootInst" ..
     # where c++11FLAG depends on the compiler e.g. 
     #-std=gnu++0x 
     # or -std=c++11 or -std=gnu++11 for GCC 4.7 and later.
@@ -57,8 +57,12 @@ Single Ion Decay Spectroscopy package for the online/offline data analysis of th
 3. Install optionally [BAT](https://www.mppmu.mpg.de/bat/) and [Cuba](http://www.feynarts.de/cuba/) libraries.
   
   These libraries are required to enable the Bayesian analyses.
-  Follow the installation instructions found on the BAT and Cuba webpage and install the libraries in standard location via make install (for now the cmake find modules for BAT and Cuba
-  are searching the libraries in the following paths: /usr/local/lib /usr/local/include/BAT /opt/local/lib /opt/local/include/BAT).
+  Follow the installation instructions found on the [BAT](https://www.mppmu.mpg.de/bat/) and [Cuba](http://www.feynarts.de/cuba/) webpages and install the libraries in standard locations via make install. 
+  (for now the cmake find modules for BAT and Cuba are searching the libraries in the following paths: 
+    /usr/local/lib 
+    /usr/local/include/BAT 
+    /opt/local/lib 
+    /opt/local/include/BAT).
   
 4. Install SIDSRoot
   
@@ -76,7 +80,7 @@ Single Ion Decay Spectroscopy package for the online/offline data analysis of th
   cd SIDSRoot
   mkdir build
   cd build
-  cmake DCMAKE_CXX_FLAGS="c++11FLAG" ..
+  cmake -DCMAKE_CXX_FLAGS="c++11FLAG" ..
   # where c++11FLAG depends on the compiler e.g. 
   #-std=gnu++0x 
   # or -std=c++11 or -std=gnu++11 for GCC 4.7 and later.
@@ -87,3 +91,5 @@ Single Ion Decay Spectroscopy package for the online/offline data analysis of th
   # or source config.csh
   ```
   
+### Using the GUI for the SIDS experiment
+
