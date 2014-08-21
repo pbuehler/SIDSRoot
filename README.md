@@ -110,4 +110,4 @@ Single Ion Decay Spectroscopy package for the online/offline data analysis of th
   ```bash
   outputFile="/SAT/hera/sids/decayresults/SIDSDecayData.root"
   ```
-  Notes : Do not modify anything in the script else unless you know what you are doing.
+  Notes : Do not modify anything else in the script unless you know what you are doing.
