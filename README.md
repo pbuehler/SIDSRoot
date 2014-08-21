@@ -94,14 +94,20 @@ Single Ion Decay Spectroscopy package for the online/offline data analysis of th
 ### Using the GUI for the SIDS experiment
 
   By default the script for the visual analysis is found in :
+  ```bash
   /path/to/SIDSRoot/build/bin/startVisualAnalysis.sh
+  ```
   
   Copy this file in the directory in which you want to do the analysis, and then do:
   ```bash
   ./startVisualAnalysis.sh UserName InputFile
   ```
   By default the output file is :
+  ```bash
   /path/to/SIDSRoot/build/AnalysisOutput/VisualAnalysis/SIDSDecayData.root
+  ```
   During experiment modify the outputFile field in the script to e.g. :
+  ```bash
   outputFile="/SAT/hera/sids/decayresults/SIDSDecayData.root"
+  ```
   Notes : Do not modify anything else unless you know what you are doing.
