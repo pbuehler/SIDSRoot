@@ -21,6 +21,9 @@
 *.la
 *.a
 
+# root files
+*.root
+
 # CMake
 CMakeCache.txt
 CMakeFiles
