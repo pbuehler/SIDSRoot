@@ -627,9 +627,7 @@ void SidsGui::AddDecay()
 
 void SidsGui::RemoveDecay()
 {
-    TString name("Decay");
     Int_t index=fDecayCounter-1;
-    name+=index;
     
     if(index>=0 && index==fDecayField.size()-1)
     {
