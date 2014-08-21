@@ -104,7 +104,7 @@ Single Ion Decay Spectroscopy package for the online/offline data analysis of th
   ```
   By default the output file of the analysis is found :
   ```bash
-  /path/to/SIDSRoot/AnalysisOutput/Osc/Offline/VisualAnalysis/SIDSDecayData.root
+  /path/to/SIDSRoot/AnalysisOutput/Osc/Online/VisualAnalysis/SIDSDecayData.root
   ```
   During experiment, we want the outputfile on hera, therefore the outputFile field in the script has to be modified to e.g. :
   ```bash
