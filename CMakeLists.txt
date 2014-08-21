@@ -178,10 +178,13 @@ add_subdirectory (passive)
 add_subdirectory (field)  
 add_subdirectory (OnlineAnalysis)
 
+set(OUTPUT_DATA_DIR "${SIDS_BINARY_DIR}/AnalysisOutput/VisualAnalysis")
+file(MAKE_DIRECTORY ${OUTPUT_DATA_DIR})
+
 WRITE_CONFIG_FILE(config.sh)
  
-configure_file(${CMAKE_SOURCE_DIR}/CTestCustom.cmake 
-               ${CMAKE_BINARY_DIR}/CTestCustom.cmake
+configure_file(${SIDS_SOURCE_DIR}/CTestCustom.cmake 
+               ${SIDS_BINARY_DIR}/CTestCustom.cmake
               )
 
 

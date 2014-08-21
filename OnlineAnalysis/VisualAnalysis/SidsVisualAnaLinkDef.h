@@ -1,5 +1,5 @@
 /* 
- * File:   EsrSidsMQLinkDef.h
+ * File:   SidsVisualAnaLinkDef.h
  * Author: winckler
  *
  * Created on August 4, 2014, 6:09 PM

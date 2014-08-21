@@ -27,10 +27,10 @@ include_directories(${INCLUDE_DIRECTORIES})
 
 
 If (Boost_FOUND)
-  configure_file( ${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/macro/startEsrSampler.sh.in ${CMAKE_BINARY_DIR}/bin/startEsrSampler.sh )
-  configure_file( ${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/macro/startEsrSink.sh.in ${CMAKE_BINARY_DIR}/bin/startEsrSink.sh )
-  configure_file( ${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/macro/startPushPull_esr.sh.in ${CMAKE_BINARY_DIR}/bin/startEsrPushPull.sh )
-  configure_file( ${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/macro/startVisualAnalysis.sh.in ${CMAKE_BINARY_DIR}/bin/startVisualAnalysis.sh )
+  configure_file( ${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/macro/startEsrSampler.sh.in ${SIDS_BINARY_DIR}/bin/startEsrSampler.sh )
+  configure_file( ${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/macro/startEsrSink.sh.in ${SIDS_BINARY_DIR}/bin/startEsrSink.sh )
+  configure_file( ${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/macro/startPushPull_esr.sh.in ${SIDS_BINARY_DIR}/bin/startEsrPushPull.sh )
+  configure_file( ${SIDS_SOURCE_DIR}/OnlineAnalysis/VisualAnalysis/macro/startVisualAnalysis.sh.in ${SIDS_BINARY_DIR}/bin/startVisualAnalysis.sh )
 EndIf (Boost_FOUND)
 
 set(LINK_DIRECTORIES
@@ -57,13 +57,11 @@ If (Boost_FOUND)
     MQDevice/EsrSidsSampler.cxx
     MQDevice/EsrFileSink.cxx
     MQTask/EsrSamplerTask.cxx
-    #data/FairMQFileSink.cxx
-    #data/EsrDecayEvent.cxx
   )
 EndIf (Boost_FOUND)
 
-Set(LINKDEF EsrSidsMQLinkDef.h)
-Set(LIBRARY_NAME EsrSidsMQ)
+Set(LINKDEF SidsVisualAnaLinkDef.h)
+Set(LIBRARY_NAME SidsVisualAna)
 
 If (Boost_FOUND)
   Set(DEPENDENCIES
@@ -73,18 +71,13 @@ EndIf (Boost_FOUND)
 
 GENERATE_LIBRARY()
 
-
-
 If (Boost_FOUND)
   Set(Exe_Names
-    #EsrMQTestBoost
     EsrMQSamplerBoost
     EsrMQFileSinkBoost
   )
 
   set(Exe_Source
-    #run/runEsrSamplerBoost.cxx
-    #run/runEsrSidsTest.cxx
     run/runEsrSampler.cxx
     run/runEsrFileSink.cxx
     )
@@ -98,7 +91,7 @@ If (Boost_FOUND)
     List(GET Exe_Source ${_file} _src)
     Set(EXE_NAME ${_name})
     Set(SRCS ${_src})
-    Set(DEPENDENCIES EsrSidsMQ)
+    Set(DEPENDENCIES SidsVisualAna)
     GENERATE_EXECUTABLE()
   EndForEach(_file RANGE 0 ${_length})
 EndIf (Boost_FOUND)

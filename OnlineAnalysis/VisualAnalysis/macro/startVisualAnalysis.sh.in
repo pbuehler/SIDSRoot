@@ -7,12 +7,12 @@ inputFile=$2
 userName=$1
 treeName="SIDSdecayData"
 branch="EsrInjData."
-outputFile="/Users/winckler/fair/FairRoot/build/ESRDecayData.root"
+outputFile="@SIDS_BINARY_DIR@/AnalysisOutput/VisualAnalysis/SIDSDecayData.root"
 eventRate="0"
 numIoThreads="1"
 outputSocketType="push"
 outputBufSize=$buffSize
 outputMethod="connect"
 outputAddress="tcp://localhost:5566"
-@CMAKE_BINARY_DIR@/bin/EsrMQSampler$dataFormat $ID $inputFile $userName $treeName $branch $outputFile $eventRate $numIoThreads $outputSocketType $outputBufSize $outputMethod $outputAddress 
+@SIDS_BINARY_DIR@/bin/EsrMQSampler$dataFormat $ID $inputFile $userName $treeName $branch $outputFile $eventRate $numIoThreads $outputSocketType $outputBufSize $outputMethod $outputAddress 
 

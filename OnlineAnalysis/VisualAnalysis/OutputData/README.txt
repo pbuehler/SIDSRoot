@@ -1,1 +1,0 @@
-Default SIDS visual analysis output directory
