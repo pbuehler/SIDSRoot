@@ -41,6 +41,7 @@ public:
     void SetResolution(float TimeResolution, float FrequencyResolution, float FrequencyOffset);
     float GetTimeResolution() {return fTimeResolution;}
     float GetFreqResolution() {return fFreqResolution;}
+    float GetFreqOffset() {return fFrequencyOffset;}
     
     ///File name corresponding to the decays 
     void SetFileName(std::string Filename) {fFileName=Filename;}
@@ -65,8 +66,33 @@ public:
     void SetFileComment(std::string FileComment){fFileComment=FileComment;}
     std::string GetFileComment() const {return fFileComment;}
     
-    void SetQualityTag(std::string QualityTag){fQualityTag=QualityTag;}
-    std::string GetQualityTag() const {return fQualityTag;}
+    void SetQualityTag(int QualityTag){fQualityTag=QualityTag;}
+    int GetQualityTag() const {return fQualityTag;}
+    
+    
+    
+    void SetNParentInit(int N) {fNp_init=N;}
+    int GetNParentInit() {return fNp_init;}
+    
+    void SetNParentEnd(int N) {fNp_end=N;}
+    int GetNParentEnd() {return fNp_end;}
+    
+    void SetNPDaughterInit(int N) {fNd_init=N;}
+    int GetNPDaughterInit() {return fNd_init;}
+    
+    void SetNDaughterEnd(int N) {fNd_end=N;}
+    int GetNDaughterEnd() {return fNd_end;}
+    
+    void SetNEC(int N) {fNEC=N;}
+    int GetNEC() {return fNEC;}
+    
+    void SetCoolParentFreq(float f) {fCoolFreqP=f;}
+    float GetCoolParentFreq() {return fCoolFreqP;}
+    
+    void SetCoolDaughterFreq(float f) {fCoolFreqD=f;}
+    float GetCoolDaughterFreq() {return fCoolFreqD;}
+    
+    
     
     template<class Archive>
     void serialize(Archive & ar, const unsigned int version) 
@@ -81,6 +107,14 @@ public:
         ar & fFileComment;
         ar & fQualityTag;
 
+        ar & fNp_init;
+        ar & fNp_end;
+        ar & fNd_init;
+        ar & fNd_end;
+        ar & fNEC;
+        ar & fCoolFreqP;
+        ar & fCoolFreqD;
+        
         ar & fECDecayEvents;
         ar & fBetaDecayEvents;
         ar & fLossDecayEvents;
@@ -103,7 +137,15 @@ protected:
     
     std::string fUserName;
     std::string fFileComment;
-    std::string fQualityTag;
+    int fQualityTag;
+    
+    int fNp_init;
+    int fNp_end;
+    int fNd_init;
+    int fNd_end;
+    int fNEC;
+    float fCoolFreqP;
+    float fCoolFreqD;
     
     vector<EsrDecayEvent> fECDecayEvents;
     vector<EsrDecayEvent> fBetaDecayEvents;
